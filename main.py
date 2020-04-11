@@ -30,7 +30,7 @@ def greeting(sentence):
 
 def response(user_response):
     bot_response = ''
-    questions = ["vad är björnar?", "vad är katter?", "vad är hundar?"]
+    questions = ["berätta om björnar?", "berätta om katter?", "berätta om hundar?"]
     articles = ['https://sv.wikipedia.org/wiki/Bj%C3%B6rnar', 'https://sv.wikipedia.org/wiki/Katt', 'https://sv.wikipedia.org/wiki/Hund']
     results = []
     index = 0
