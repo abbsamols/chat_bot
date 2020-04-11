@@ -3,6 +3,7 @@ En AI som svarar på frågor och kommuinicerar.
 
 Jag har tagit inspiration från den här videon:
 https://www.youtube.com/watch?v=QpMsT0WuIuI
+
 Den stora skillnaden mellan videons projekt och mitt projekt är att min AI kan svara på flera olika frågor
 medan videons projekt bara ger användaren möjlighet att få svar på en fråga.
 
@@ -13,6 +14,7 @@ AI:n har även olika hälsningsfraser som slumpas fram om användaren skriver en
 Om AI:n inte känner igen användarens inmatning skriver den "Jag förstår tyvärr inte.".
 
 Exempel på konservation med AI:n:
+
 Bot: Hej! Jag är en bot som kan svara på frågor. För att stänga av mig, skriv hejdå!
 
 Hej
