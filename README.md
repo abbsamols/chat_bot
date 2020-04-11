@@ -14,13 +14,23 @@ Om AI:n inte känner igen användarens inmatning skriver den "Jag förstår tyv�
 
 Exempel på konservation med AI:n:
 Bot: Hej! Jag är en bot som kan svara på frågor. För att stänga av mig, skriv hejdå!
+
 Hej
+
 Bot: tjena
+
 Kan du berätta om katter?
+
 Bot: Om katten är glad och vill kela, kan den trampa med tassarna.
+
 berätta om hundar
+
 Bot: Läran om hundar kallas kynologi.
+
 Tack
+
 Bot: Varsågod!
+
 Hejdå
+
 Bot: Hejdå!
