@@ -1,3 +1,5 @@
+# Chat bot created by Samuel Olsson
+
 from newspaper import Article
 import random
 import string
