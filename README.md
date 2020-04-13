@@ -1,4 +1,4 @@
-# chat_bot
+# Vad har jag gjort?
 En AI som svarar på frågor och kommuinicerar.
 
 Jag har tagit inspiration från den här videon:
@@ -38,9 +38,5 @@ Hejdå
 
 Bot: Hejdå!
  
- 
- 
- 
- 
- 
+# Hur kan projektet utvekclas?
 Projektet kan utvecklas genom att göra AI:n smartare genom att låta den träna med olika konversationer för att lära sig vad den ska skriva beroende på användarens inmatning. AI:n skulle kunna utvecklas till att kunna svara på fler frågor och vara mer social. Den skulle exempelvis kunna skriva frågor och sedan svara på användarens svar. AI:n skulle också kunna tränas till att kunna kommentera användarens påståenden för att den ska bli mer mänsklig i sitt skrivande.
