@@ -20,29 +20,29 @@ remove_punct_dict = dict((ord(punct),None) for punct in string.punctuation)
 def LemNormalize(text): # Gör en lista med artikelns ord med bara små bokstäver.
     return nltk.word_tokenize(text.lower().translate(remove_punct_dict))
 
-GREETING_INPUTS = ["hej", "hallå", "tjena", "goddag", "godmorgon", "godkväll"]
-GREETING_RESPONSES = ["hej", "hallå", "tjena"]
+GREETING_INPUTS = ["hej", "hallå", "tjena", "goddag", "godmorgon", "godkväll"] # Hälsningsfraser från användaren.
+GREETING_RESPONSES = ["hej", "hallå", "tjena"] # Hälsningsfraser som kan slumpas fram av AI:n.
 
-def greeting(sentence):
-    for word in sentence.split():
+def greeting(sentence): # Slumpar hälsningsfras.
+    for word in sentence.split(): # Om användarens inmatning har minst ett ord som definieras som hälsningsfras kommer AI:n att hälsa tillbaka.
         if word.lower() in GREETING_INPUTS:
             return random.choice(GREETING_RESPONSES)
 
 def response(user_response):
     bot_response = ''
-    questions = ["berätta om björnar?", "berätta om katter?", "berätta om hundar?"]
-    articles = ['https://sv.wikipedia.org/wiki/Bj%C3%B6rnar', 'https://sv.wikipedia.org/wiki/Katt', 'https://sv.wikipedia.org/wiki/Hund']
+    questions = ["berätta om björnar?", "berätta om katter?", "berätta om hundar?"] # Frågor som AI:n utgår från för att avgöra vad användaren frågar efter.
+    articles = ['https://sv.wikipedia.org/wiki/Bj%C3%B6rnar', 'https://sv.wikipedia.org/wiki/Katt', 'https://sv.wikipedia.org/wiki/Hund'] # Länkar som AI:n hämtar information från för att svara på användarens frågor.
     results = []
     index = 0
     for question in questions:
-        Question_similarity = SequenceMatcher(a=questions[index], b=user_response).ratio()
-        results.append(Question_similarity)
+        Question_similarity = SequenceMatcher(a=questions[index], b=user_response).ratio() # Avgör hur lik användarens fråga är de frågor som AI:n utgår ifrån.
+        results.append(Question_similarity) # Resultaten för hur lik frågan är läggs till i en lista.
         index += 1
     results_sorted = sorted(results, key=None, reverse=True)
     index = 0
-    for result in results:
+    for result in results: # Går igenom alla resultat och kollar om det är det bästa resultatet.
         if result == results_sorted[0]:
-            article = Article(articles[index])
+            article = Article(articles[index]) # Bestämmer vilken länk där information som bäst svarar på användarens fråga finns.
             article.download()
             article.parse()
             article.nlp()
@@ -61,7 +61,7 @@ def response(user_response):
     tfidf = TfidVec.fit_transform(sent_tokens)
     vals = cosine_similarity(tfidf[-1], tfidf) # Bestämmer hur lik användarens input är de olika meningarna i artikeln.
     #print(vals)
-    idx = vals.argsort()[0][-2] # Bestämmer vilken av de inputs som datorn tränar med som är mest lik användarens input.
+    idx = vals.argsort()[0][-2] # Bestämmer meningen som är mest lik användarens input.
     #print(idx)
     flat = vals.flatten()
     flat.sort()
@@ -71,7 +71,7 @@ def response(user_response):
     if score < 0.1:
         bot_response =  bot_response + "Jag förstår tyvärr inte."
     else:
-        bot_response = bot_response + sent_tokens[idx]
+        bot_response = bot_response + sent_tokens[idx] # Om "score" är större än 0.1 svarar boten på användarens fråga."
     sent_tokens.remove(user_response)
     return bot_response
 
@@ -86,7 +86,7 @@ while on == True:
             if greeting(user_response) != None:
                 print("Bot: " + greeting(user_response))
             else:
-                print("Bot: " + response(user_response))
+                print("Bot: " + response(user_response)) # Svarar på användarens fråga.
     else:
         on = False
         print("Bot: Hejdå!")
