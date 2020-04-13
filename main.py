@@ -59,7 +59,6 @@ def response(user_response):
     sent_tokens.append(user_response)
 
     TfidVec = TfidfVectorizer(tokenizer = LemNormalize, stop_words = 'english')
-
     tfidf = TfidVec.fit_transform(sent_tokens)
     vals = cosine_similarity(tfidf[-1], tfidf) # Bestämmer hur lik användarens input är de olika meningarna i artikeln.
     idx = vals.argsort()[0][-2] # Bestämmer meningen som är mest lik användarens input.
