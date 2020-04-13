@@ -5,7 +5,7 @@ Jag har tagit inspiration från den här videon:
 https://www.youtube.com/watch?v=QpMsT0WuIuI
 
 Den stora skillnaden mellan videons projekt och mitt projekt är att min AI kan svara på flera olika frågor
-medan videons projekt bara ger användaren möjlighet att få svar på en fråga.
+medan videons projekt bara ger användaren möjlighet att få svar på en fråga. 
 
 Jag har gjort en AI som kan svara på frågor som handlar om björnar, katter och hundar.
 AI:n utgår från länkar som handlar om de djuren och avgör vilken mening från länkens text som bäst svaraar på användarens fråga.
