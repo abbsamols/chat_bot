@@ -34,6 +34,10 @@ Tack
 
 Bot: Varsågod!
 
+godnatt
+
+Bot: Jag förstår tyvärr inte.
+
 Hejdå
 
 Bot: Hejdå!
